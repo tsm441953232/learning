@@ -3,6 +3,9 @@ package com.example.mutilpulthread.reentrancelock;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * lock锁 实现加锁功能 模仿synchronize
+ */
 public class LockClass1 implements Runnable{
     private Integer key = 0;
 

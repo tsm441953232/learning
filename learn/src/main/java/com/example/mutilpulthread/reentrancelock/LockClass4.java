@@ -4,6 +4,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * try lock
+ */
 public class LockClass4 implements Runnable {
     private Integer key = 0;
     private Integer value = 0;

@@ -1,6 +1,4 @@
-package com.example.mutilpulthread.reentrancelock;
-
-import com.rabbitmq.client.UnblockedCallback;
+package com.example.learn.mutilpulthread.reentrancelock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

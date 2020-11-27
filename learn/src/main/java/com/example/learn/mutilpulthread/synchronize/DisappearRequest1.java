@@ -1,4 +1,4 @@
-package com.example.mutilpulthread.synchronize;
+package com.example.learn.mutilpulthread.synchronize;
 
 /**
 /**

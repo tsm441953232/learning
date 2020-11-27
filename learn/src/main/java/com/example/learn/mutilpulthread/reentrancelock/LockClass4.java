@@ -1,12 +1,13 @@
-package com.example.mutilpulthread.reentrancelock;
+package com.example.learn.mutilpulthread.reentrancelock;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- *
+ * try lock
  */
-public class LockClass2 implements Runnable {
+public class LockClass4 implements Runnable {
     private Integer key = 0;
     private Integer value = 0;
 
@@ -17,10 +18,18 @@ public class LockClass2 implements Runnable {
     public void run() {
         // 需要结果是key实现自增长，如果没有同步块，则可能会出现重复key值的现象
         for (int j = 0; j < 10000; j++) {
-            boolean getLock = lock.tryLock();
+            boolean getLock = false;
+            try {
+                getLock = lock.tryLock(5, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (getLock) {
                 try {
                     key++;
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
                     lock.unlock();
                 }
@@ -31,7 +40,7 @@ public class LockClass2 implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        LockClass2 lt = new LockClass2();
+        LockClass4 lt = new LockClass4();
 
         Thread thread1 = new Thread(lt);
         Thread thread2 = new Thread(lt);

@@ -1,4 +1,4 @@
-package com.example.mutilpulthread.reentrancelock;
+package com.example.learn.mutilpulthread.reentrancelock;
 
 import lombok.SneakyThrows;
 

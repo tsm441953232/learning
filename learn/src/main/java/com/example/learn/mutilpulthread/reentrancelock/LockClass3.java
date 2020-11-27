@@ -1,13 +1,10 @@
-package com.example.mutilpulthread.reentrancelock;
+package com.example.learn.mutilpulthread.reentrancelock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * try lock
- */
-public class LockClass4 implements Runnable {
+public class LockClass3 implements Runnable {
     private Integer key = 0;
     private Integer value = 0;
 
@@ -27,9 +24,6 @@ public class LockClass4 implements Runnable {
             if (getLock) {
                 try {
                     key++;
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 } finally {
                     lock.unlock();
                 }
@@ -40,7 +34,7 @@ public class LockClass4 implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        LockClass4 lt = new LockClass4();
+        LockClass3 lt = new LockClass3();
 
         Thread thread1 = new Thread(lt);
         Thread thread2 = new Thread(lt);
@@ -48,7 +42,7 @@ public class LockClass4 implements Runnable {
         thread2.start();
         thread1.join();
         thread2.join();
-        System.out.println("key == " + lt.key + " value == " + lt.value + " all == " + (lt.key+ lt.value));
+        System.out.println("key == " + lt.key + " value == " + lt.value + " all == " + (lt.key + lt.value));
     }
 
 }

@@ -1,9 +1,7 @@
 package com.example.learn.java8;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Lambda表达式学习
@@ -29,14 +27,14 @@ public class Lambda {
     public static void main(String[] args) {
 
         //Comparator 是一个函数式声明的接口,我们可以看到
-        /*List<Integer> list = Arrays.asList(22, 30, 19);
+        List<Integer> list = Arrays.asList(22, 30, 19);
         Collections.sort(list, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o1.compareTo(o2);
             }
         });
-        list.stream().forEach(e -> System.out.println(e));*/
+        list.stream().forEach(e -> System.out.println(e));
 
 
         /*List<Integer> list = Arrays.asList(22, 30, 19);
@@ -51,9 +49,11 @@ public class Lambda {
         list.stream().forEach(e -> System.out.println(e));*/
 
 
-        List<Integer> list = Arrays.asList(22, 30, 19);
+        /*List<Integer> list = Arrays.asList(22, 30, 19);
         Collections.sort(list, (o1, o2) -> o2.compareTo(o1));
-        list.stream().forEach(e -> System.out.println(e));
+        list.stream().forEach(e -> System.out.println(e));*/
+
+        Map map = new ConcurrentHashMap();
     }
 
 }

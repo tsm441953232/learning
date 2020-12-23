@@ -1,4 +1,4 @@
-package com.example.learn.java8;
+package com.example.learn.javese.chapter6;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -54,6 +54,7 @@ public class Lambda {
         list.stream().forEach(e -> System.out.println(e));*/
 
         Map map = new ConcurrentHashMap();
+
     }
 
 }
